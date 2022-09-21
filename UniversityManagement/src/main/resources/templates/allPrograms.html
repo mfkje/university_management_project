@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>student to course</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+          <link rel="stylesheet" th:href="@{/css/form.css}"  />     
+</head>
+<body>
+<header class="header">
+    <nav class="nav">
+        <div>
+            <img class="pt-2"
+                 th:src="@{/images/logo.jpg}"
+                 alt="school logo"
+            />
+
+        </div>
+
+        <ul class="nav__links">
+            <li class="nav__item">
+                <a class="nav__link" th:href="@{/}">Home</a>
+            </li>
+            <li class="nav__item">
+                <a class="nav__link nav__link--btn" th:href="@{/}"
+                >Log out</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+     <section class="form-section">
+<div class="container">
+<h3>Student List</h3>
+
+<table style="width:100%" class="table  table-bordered table-striped  ">
+    <thead>
+    <tr>
+        <th th:type="hidden"></th>
+        <th>Name</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tr th:each="pr:${programs}">
+        <td th:type="hidden" th:filed="${pr.id}"></td>
+        <td th:text="${pr.programName}"></td>
+        <td>
+            <a th:href="@{/programStudents/{id}(id=${pr.id})}" class="btn btn-primary">see all the student in this program</a>
+
+        </td>
+    </tr>
+
+</table>
+                <a th:href="@{/addProgram}" class="btn btn-primary">add new program</a>
+    <br>
+    <br>
+                <a th:href="@{/admin}" class="btn btn-primary btn-sm mb-3">go back to admin page</a>
+
+</div>
+</section>
+
+
+    <footer class="footer-section">
+        <div class="footer-col">
+            <h3>Top Products</h3>
+            <li>Manage Reputation</li>
+            <li>Power Tools</li>
+            <li>Managed Websites</li>
+            <li>Marketing Service</li>
+        </div>
+        <div class="footer-col">
+            <h3>Quick Links</h3>
+            <li>Jobs</li>
+            <li>Brand Assets</li>
+            <li>Investor Relations</li>
+            <li>Terms of Serivce</li>
+        </div>
+        <div class="footer-col">
+            <h3>Features</h3>
+            <li>Manage Reputation</li>
+            <li>Power Tools</li>
+            <li>Managed Websites</li>
+            <li>Marketing Service</li>
+        </div>
+        <div class="footer-col">
+            <h3>Resources</h3>
+            <li>Research</li>
+            <li>Experts</li>
+            <li>Marketing Service</li>
+        </div>
+        <div class="footer-col">
+            <h3>Newsletter</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing </p>
+
+            <div class="subscribe"></div>
+            <input type="text" placeholder="Your Email address">
+            <a href="#" class="yellow">SUBSCRIBE</a>
+        </div>
+        <div class="copyright">
+            <p>Copyright @2022 ALL rights reserved by school</p>
+            <div class="pro-links">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-linkedin-in"></i>
+            </div>
+        </div>
+
+    </footer>
+</body>
+</html>

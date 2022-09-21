@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/registration.css}"/>
+    <link rel="preconnect" th:href="@{https://fonts.googleapis.com}">
+    <link rel="preconnect" th:href="@{https://fonts.gstatic.com}" crossorigin>
+    <link th:href="@{https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Rubik:ital,wght@0,500;0,600;1,400&display=swap}" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{https://use.fontawesome.com/releases/v5.15.4/css/all.css}"  />
+ 
+    
+    <title>Registration</title>
+    
+</head>
+<body>
+<header>
+   <nav >
+     <img  alt="Future logo" th:src="@{/images/logo.jpg}"/>
+     <div class="navigation">
+     <ul>
+      <li><a th:href="@{/}">Home</a></li>
+      <li><a th:href="@{/}">Our programs</a></li>
+      <li><a href="#signup">Admission</a></li>
+       <li><a th:href="@{/login}">Login</a></li>-->
+
+     </ul>
+     </div>
+   </nav>
+</header>
+
+<main>
+
+    <section class="section-featured">
+        <h1>It's easy!</h1>
+        <p>Plan approximately 5 minutes to complete the 3 steps form</p>
+        <div class="feature-base">
+          <div class="fea-box">
+            <i class="fas fa-book"></i>
+           <h3> Program choices</h3>
+    
+          </div>
+          <div class="fea-box">
+            <i class="fas fa-address-book"></i>
+           <h3> Contact information</h3>
+         
+          </div>
+          <div class="fea-box">
+            <i class="fas fa-id-card"></i>
+           <h3>Personal informationn</h3>
+          </div>
+        </div>
+       </section>
+
+
+       <section class = "registration-section" id ="signup">
+      
+        <form class="form" th:action="@{/process_register}" th:object="${user}" method="post" >
+            <h1> Admission Request</h1>   
+         
+          <label>First Name</label>
+         <input type="text" name="first_name"  />
+          <label>Last Name</label>
+          <input type="text" name="last_name"  />
+          <label for="gender">Gender</label>
+          <select id="gender" name="gender" >
+            <option th:value="'Male'" th:text="Male">Male</option>
+            <option th:value="'Female'" th:text="Female">Female</option>
+            </select>
+          <label> Date of birth</label>
+          <input type="date" name=“date_of_birth />
+          <label>Phone Number</label>
+          <input type="text" name="Phone_number" />
+          <label>Email</label>
+          <input type="email" name="email"  th:field="*{email}"/>
+            <label >Password: </label>
+                <input type="password" th:field="*{password}" class="form-control"
+                       required minlength="6" maxlength="10"/>
+            </div>
+          <label> Address</label>
+          <input type="email" name=“address />
+          <label for="programs">Choose one program:</label>
+          <select id="programs" name="programs" >
+            <option value="Computer Science" >Computer Science</option>
+            <option value="Fashoin & Art">Fashoin and Art</option>
+            <option value="hotel Management" > Hotel Management</option>
+            <option value="Computerized Accounting">Computerized Accounting</option>
+            <option value="Bussiness Technology" >Bussiness Technology</option>
+           
+          </select>  
+<!--          <a class="yellow" th:href="@{registration}">submit</a>-->
+            <button type="submit" class="btn yellow">Sign Up</button>
+        </form> 
+
+        <div class="img">
+            <img th:src="@{/images/registrationAction.jpg}" alt="online-registration">
+        </div>
+
+      </section>
+  
+    
+  
+  </main>  
+
+  <footer class="footer-section">
+    <div class="footer-col">
+      <h3>Top Products</h3>
+      <li>Manage Reputation</li>
+      <li>Power Tools</li>
+      <li>Managed Websites</li>
+      <li>Marketing Service</li>
+    </div>
+    <div class="footer-col">
+      <h3>Quick Links</h3>
+      <li>Jobs</li>
+      <li>Brand Assets</li>
+      <li>Investor Relations</li>
+      <li>Terms of Serivce</li>
+    </div>
+    <div class="footer-col">
+      <h3>Features</h3>
+      <li>Manage Reputation</li>
+      <li>Power Tools</li>
+      <li>Managed Websites</li>
+      <li>Marketing Service</li>
+    </div>
+    <div class="footer-col">
+      <h3>Resources</h3>
+      <li>Research</li>
+      <li>Experts</li>
+      <li>Marketing Service</li>
+    </div>
+    <div class="footer-col">
+      <h3>Newsletter</h3>
+     <p>Lorem ipsum dolor sit amet consectetur adipisicing </p>
+
+     <div class="subscribe"></div>
+     <input type="text" placeholder="Your Email address">
+     <a href="#" class="yellow">SUBSCRIBE</a>
+    </div>
+    <div class="copyright">
+      <p>Copyright @2022 ALL rights reserved by school</p>
+      <div class="pro-links">
+        <i class="fab fa-facebook-f"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-linkedin-in"></i>
+      </div>
+    </div>
+
+    </footer>
+
+
+</body>
+</html>
